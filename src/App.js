@@ -1,20 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import "../node_modules/video-react/dist/video-react.css";
 import './App.css';
+import {Grid, Row, Col} from 'react-bootstrap';
+import {Player} from 'video-react';
+
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    return <div className="App">
+      <Grid>
+        <Row className="show-grid">
+          <Col xs={8}>
+            <Player>
+              <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"/>
+            </Player>
+          </Col>
+          <Col xs={4}>
+            Hello 2
+          </Col>
+        </Row>
+      </Grid>
+    </div>;
   }
 }
 
